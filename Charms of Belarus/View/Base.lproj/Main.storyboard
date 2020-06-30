@@ -135,9 +135,9 @@ CgoKA
                     </view>
                     <connections>
                         <outlet property="attractionDescription" destination="9r1-ZB-l85" id="zAq-IK-Igo"/>
+                        <outlet property="attractionImage" destination="W1a-yf-WT7" id="bkh-c6-xK8"/>
                         <outlet property="attractionTitle" destination="Iys-zx-91a" id="85l-PZ-PYG"/>
                         <outlet property="buttonAppearance" destination="biS-8N-ibo" id="31l-F6-4Le"/>
-                        <outlet property="flag" destination="W1a-yf-WT7" id="bkh-c6-xK8"/>
                         <outlet property="pickerView" destination="7bM-kf-W4c" id="Rx1-q9-5v4"/>
                     </connections>
                 </viewController>

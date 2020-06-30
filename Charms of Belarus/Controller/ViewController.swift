@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var buttonAppearance: UIButton!
     @IBOutlet weak var attractionTitle: UILabel!
-    @IBOutlet weak var flag: UIImageView!
+    @IBOutlet weak var attractionImage: UIImageView!
     @IBOutlet weak var attractionDescription: UILabel!
     
     let base = Base()
@@ -26,10 +26,11 @@ class ViewController: UIViewController {
         buttonAppearance.layer.cornerRadius = 20
         buttonAppearance.layer.borderWidth = 1
         // Loading initial elements to the view
-        attractionTitle.text = base.cities[0].attractions[0].attractionName
-        flag.image = base.cities[0].attractions[0].image
-        attractionDescription.text = base.cities[0].attractions[0].description
-        url = base.cities[0].attractions[0].link
+        if let attraction = base.cities.first?.attractions.first {
+            setViewValues(attraction.attractionName, attraction.image, attraction.description, attraction.link)
+        } else {
+            fatalError("Can't retrieve value from base array")
+        }
     }
 
     @IBAction func viewInWikiPressed(_ sender: UIButton) {
@@ -39,6 +40,12 @@ class ViewController: UIViewController {
         UIApplication.shared.open(safeUrl, options: [:])
     }
     
+    func setViewValues(_ name: String, _ flag: UIImage, _ description: String, _ url: String) {
+        self.attractionTitle.text = name
+        self.attractionImage.image = flag
+        self.attractionDescription.text = description
+        self.url = url
+    }
 }
 
 
@@ -79,11 +86,15 @@ extension ViewController: UIPickerViewDelegate {
         }
         let selectedCity = pickerView.selectedRow(inComponent: 0)
         let selectedAttraction = pickerView.selectedRow(inComponent: 1)
+        
         // Setting all properties of chosen city and attraction to view
-        attractionTitle.text = base.cities[selectedCity].attractions[selectedAttraction].attractionName
-        flag.image = base.cities[selectedCity].attractions[selectedAttraction].image
-        attractionDescription.text = base.cities[selectedCity].attractions[selectedAttraction].description
-        url = base.cities[selectedCity].attractions[selectedAttraction].link
+        
+        let name = base.cities[selectedCity].attractions[selectedAttraction].attractionName
+        let image = base.cities[selectedCity].attractions[selectedAttraction].image
+        let description = base.cities[selectedCity].attractions[selectedAttraction].description
+        let url = base.cities[selectedCity].attractions[selectedAttraction].link
+        
+        setViewValues(name, image, description, url)
     }
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
@@ -91,6 +102,5 @@ extension ViewController: UIPickerViewDelegate {
         let w = pickerView.frame.size.width
         return component == 0 ? (1 / 3.0) * w : (2 / 3.0) * w
     }
-    
 }
 
