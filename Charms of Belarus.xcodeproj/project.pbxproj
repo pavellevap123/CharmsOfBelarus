@@ -13,6 +13,9 @@
 		E977DB3524A88418007F8915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977DB3324A88418007F8915 /* Main.storyboard */; };
 		E977DB3724A8841A007F8915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E977DB3624A8841A007F8915 /* Assets.xcassets */; };
 		E977DB3A24A8841A007F8915 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977DB3824A8841A007F8915 /* LaunchScreen.storyboard */; };
+		E9E0000324AA789100E1B55E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0000224AA789100E1B55E /* City.swift */; };
+		E9E0000524AA789F00E1B55E /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0000424AA789F00E1B55E /* Attraction.swift */; };
+		E9E0000724AA797400E1B55E /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0000624AA797400E1B55E /* Base.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		E977DB3624A8841A007F8915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E977DB3924A8841A007F8915 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E977DB3B24A8841A007F8915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9E0000224AA789100E1B55E /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		E9E0000424AA789F00E1B55E /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
+		E9E0000624AA797400E1B55E /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,40 @@
 			children = (
 				E977DB2D24A88418007F8915 /* AppDelegate.swift */,
 				E977DB2F24A88418007F8915 /* SceneDelegate.swift */,
-				E977DB3124A88418007F8915 /* ViewController.swift */,
-				E977DB3324A88418007F8915 /* Main.storyboard */,
+				E9E0000124AA787000E1B55E /* Model */,
+				E977DB4124A88425007F8915 /* Controller */,
+				E977DB4224A8842D007F8915 /* View */,
 				E977DB3624A8841A007F8915 /* Assets.xcassets */,
 				E977DB3824A8841A007F8915 /* LaunchScreen.storyboard */,
 				E977DB3B24A8841A007F8915 /* Info.plist */,
 			);
 			path = "Charms of Belarus";
+			sourceTree = "<group>";
+		};
+		E977DB4124A88425007F8915 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E977DB3124A88418007F8915 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E977DB4224A8842D007F8915 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E977DB3324A88418007F8915 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E9E0000124AA787000E1B55E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9E0000224AA789100E1B55E /* City.swift */,
+				E9E0000424AA789F00E1B55E /* Attraction.swift */,
+				E9E0000624AA797400E1B55E /* Base.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E0000724AA797400E1B55E /* Base.swift in Sources */,
 				E977DB3224A88418007F8915 /* ViewController.swift in Sources */,
 				E977DB2E24A88418007F8915 /* AppDelegate.swift in Sources */,
+				E9E0000524AA789F00E1B55E /* Attraction.swift in Sources */,
+				E9E0000324AA789100E1B55E /* City.swift in Sources */,
 				E977DB3024A88418007F8915 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
